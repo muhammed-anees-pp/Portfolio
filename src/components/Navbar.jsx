@@ -20,18 +20,21 @@ const Navbar = ({ activeSection, scrollToSection }) => {
         <nav className={`navbar ${scrolled ? 'scrolled' : ''}`}>
             <div className="container nav-container">
                 <a href="#" className="nav-logo">
-                    <span>M</span> Anees
+                    Anees<span>.</span>
                 </a>
 
                 {/* Desktop Menu */}
                 <div className="nav-menu">
-                    {navLinks.map((link) => (
+                    {navLinks.map((item) => (
                         <button
-                            key={link}
-                            className={`nav-link ${activeSection === link ? 'active' : ''}`}
-                            onClick={() => scrollToSection(link)}
+                            key={item}
+                            onClick={() => {
+                                scrollToSection(item);
+                                setIsMenuOpen(false);
+                            }}
+                            className={`nav-link ${activeSection === item ? 'active' : ''}`}
                         >
-                            {link}
+                            {item}
                         </button>
                     ))}
                 </div>
@@ -42,25 +45,24 @@ const Navbar = ({ activeSection, scrollToSection }) => {
                         {isMenuOpen ? <X size={24} /> : <Menu size={24} />}
                     </button>
                 </div>
-
-                {/* Mobile Menu */}
-                {isMenuOpen && (
-                    <div className="mobile-menu-overlay">
-                        {navLinks.map((link) => (
-                            <button
-                                key={link}
-                                className={`mobile-nav-link ${activeSection === link ? 'active' : ''}`}
-                                onClick={() => {
-                                    scrollToSection(link);
-                                    setIsMenuOpen(false);
-                                }}
-                            >
-                                {link}
-                            </button>
-                        ))}
-                    </div>
-                )}
             </div>
+
+            {isMenuOpen && (
+                <div className="mobile-menu-overlay">
+                    {navLinks.map((item) => (
+                        <button
+                            key={item}
+                            onClick={() => {
+                                scrollToSection(item);
+                                setIsMenuOpen(false);
+                            }}
+                            className={`mobile-nav-link ${activeSection === item ? 'active' : ''}`}
+                        >
+                            {item}
+                        </button>
+                    ))}
+                </div>
+            )}
         </nav>
     );
 };
