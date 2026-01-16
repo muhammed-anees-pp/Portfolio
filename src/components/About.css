@@ -1,0 +1,39 @@
+.about-section {
+    background: var(--bg-main);
+}
+
+.about-intro-container {
+    max-width: 800px;
+    margin: 0 auto 4rem;
+    text-align: center;
+    color: var(--text-body);
+    font-size: 1.1rem;
+}
+
+.about-intro-container p {
+    margin-bottom: 1.5rem;
+}
+
+.services-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 2rem;
+}
+
+.service-card {
+    text-align: center;
+}
+
+.service-icon-wrapper {
+    color: var(--color-primary);
+    margin-bottom: 1.5rem;
+    display: inline-flex;
+    padding: 1rem;
+    background: rgba(79, 70, 229, 0.1);
+    border-radius: 50%;
+}
+
+.service-title {
+    margin-bottom: 1rem;
+    font-size: 1.25rem;
+}
