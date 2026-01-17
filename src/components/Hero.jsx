@@ -42,7 +42,7 @@ const Hero = ({ scrollToSection }) => {
                         <a href="https://www.instagram.com/mhdanees.pp/" target="_blank" rel="noopener noreferrer">
                             <Instagram size={24} />
                         </a>
-                        <a href="mailto:muhammedaneespp99@gmail.com">
+                        <a href="mailto:muhammedanees.work@gmail.com">
                             <Mail size={24} />
                         </a>
                     </div>
